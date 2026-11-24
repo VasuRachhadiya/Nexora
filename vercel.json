@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/Explore", "destination": "/Explore/index.html" },
+    { "source": "/explore", "destination": "/Explore/index.html" },
+    { "source": "/Explore/Details/:id", "destination": "/Explore/Details/1/index.html" },
+    { "source": "/Services", "destination": "/Services/index.html" },
+    { "source": "/services", "destination": "/Services/index.html" },
+    { "source": "/Home/About", "destination": "/Home/About/index.html" },
+    { "source": "/about", "destination": "/Home/About/index.html" },
+    { "source": "/Home/Contact", "destination": "/Home/Contact/index.html" },
+    { "source": "/contact", "destination": "/Home/Contact/index.html" },
+    { "source": "/Home/Privacy", "destination": "/Home/Privacy/index.html" },
+    { "source": "/privacy", "destination": "/Home/Privacy/index.html" },
+    { "source": "/Home/Terms", "destination": "/Home/Terms/index.html" },
+    { "source": "/terms", "destination": "/Home/Terms/index.html" },
+    { "source": "/Search", "destination": "/Search/index.html" },
+    { "source": "/search", "destination": "/Search/index.html" },
+    { "source": "/Account/Login", "destination": "/Account/Login/index.html" },
+    { "source": "/login", "destination": "/Account/Login/index.html" },
+    { "source": "/Account/Register", "destination": "/Account/Register/index.html" },
+    { "source": "/register", "destination": "/Account/Register/index.html" }
+  ]
+}

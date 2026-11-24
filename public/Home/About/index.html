@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Studio &#x2014; The Architecture of Intent — Premium Futuristic Digital Experience</title>
+    <meta name="description" content="NEXORA is an award-winning creative engineering studio architecting cinematic digital products, spatial interfaces, and high-performance Web systems." />
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="NEXORA — Premium Modern Web Experience" />
+    <meta property="og:description" content="Ideas deserve extraordinary experiences. High-performance design & spatial digital products." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap & Site CSS -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css?v=btilhPGYfJ_koD7CUNzHIjFAkvI-58ajP_CBK7V9tW8" />
+</head>
+<body>
+    <!-- Ambient Lighting Mesh & Interactive Particle Canvas -->
+    <div b-lu7cryzxu6 class="ambient-mesh" aria-hidden="true">
+        <div b-lu7cryzxu6 class="ambient-orb ambient-orb-1"></div>
+        <div b-lu7cryzxu6 class="ambient-orb ambient-orb-2"></div>
+        <div b-lu7cryzxu6 class="ambient-orb ambient-orb-3"></div>
+    </div>
+    <canvas b-lu7cryzxu6 id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- App Wrapper -->
+    <div b-lu7cryzxu6 class="app-content">
+        <!-- Floating Glassmorphic Navigation -->
+        <header b-lu7cryzxu6>
+            <nav b-lu7cryzxu6 class="nexora-navbar">
+                <div b-lu7cryzxu6 class="navbar-inner">
+                    <!-- Brand -->
+                    <a class="navbar-brand-logo" href="/">
+                        <div b-lu7cryzxu6 class="brand-icon-gem">
+                            <svg b-lu7cryzxu6 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon b-lu7cryzxu6 points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline b-lu7cryzxu6 points="2 17 12 22 22 17"></polyline>
+                                <polyline b-lu7cryzxu6 points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <span b-lu7cryzxu6>NEXORA</span>
+                    </a>
+
+                    <!-- Nav Items Cluster -->
+                    <ul b-lu7cryzxu6 class="nav-links-cluster">
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/">Home</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/Explore">Explore</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/Services">Services</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item active" href="/Home/About">About</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/Home/Contact">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Actions Cluster -->
+                    <div b-lu7cryzxu6 class="nav-actions-cluster">
+                        <!-- Search Trigger Button -->
+                        <button b-lu7cryzxu6 type="button" class="btn-nexora-icon" data-open-search title="Search experiences (Ctrl+K)">
+                            <svg b-lu7cryzxu6 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle b-lu7cryzxu6 cx="11" cy="11" r="8"></circle>
+                                <line b-lu7cryzxu6 x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+
+                            <a class="btn-nexora-ghost d-none d-sm-inline-flex" href="/Account/Login">Sign In</a>
+                            <a class="btn-nexora-primary" href="/Home/Contact">
+                                <span b-lu7cryzxu6>Get Started</span>
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line b-lu7cryzxu6 x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline b-lu7cryzxu6 points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+
+                        <!-- Mobile Hamburger Button -->
+                        <button b-lu7cryzxu6 type="button" class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                            <svg b-lu7cryzxu6 width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line b-lu7cryzxu6 x1="3" y1="12" x2="21" y2="12"></line>
+                                <line b-lu7cryzxu6 x1="3" y1="6" x2="21" y2="6"></line>
+                                <line b-lu7cryzxu6 x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation Drawer Overlay -->
+        <div b-lu7cryzxu6 class="mobile-drawer-overlay">
+            <div b-lu7cryzxu6 class="mobile-drawer">
+                <div b-lu7cryzxu6>
+                    <div b-lu7cryzxu6 class="d-flex align-items-center justify-content-between mb-4">
+                        <div b-lu7cryzxu6 class="navbar-brand-logo">
+                            <div b-lu7cryzxu6 class="brand-icon-gem">
+                                <svg b-lu7cryzxu6 viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon b-lu7cryzxu6 points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <span b-lu7cryzxu6>NEXORA</span>
+                        </div>
+                        <button b-lu7cryzxu6 type="button" class="mobile-drawer-close btn-nexora-icon" aria-label="Close menu">
+                            <svg b-lu7cryzxu6 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line b-lu7cryzxu6 x1="18" y1="6" x2="6" y2="18"></line>
+                                <line b-lu7cryzxu6 x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div b-lu7cryzxu6 class="mobile-drawer-links">
+                        <a class="mobile-drawer-link" href="/">Home</a>
+                        <a class="mobile-drawer-link" href="/Explore">Explore</a>
+                        <a class="mobile-drawer-link" href="/Services">Services</a>
+                        <a class="mobile-drawer-link" href="/Home/About">About Studio</a>
+                        <a class="mobile-drawer-link" href="/Home/Contact">Contact</a>
+                        <a class="mobile-drawer-link" href="/Search">Global Search</a>
+                    </div>
+                </div>
+
+                <div b-lu7cryzxu6 class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+                        <div b-lu7cryzxu6 class="d-flex flex-column gap-2">
+                            <a class="btn-nexora-secondary w-100 justify-content-center" href="/Account/Login">Sign In</a>
+                            <a class="btn-nexora-primary w-100 justify-content-center" href="/Account/Register">Join NEXORA</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Search Dialog Modal (Ctrl + K) -->
+        <div b-lu7cryzxu6 class="nexora-search-modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+            <div b-lu7cryzxu6 class="search-dialog-box">
+                <form method="get" action="/Search">
+                    <div b-lu7cryzxu6 class="search-input-header">
+                        <svg b-lu7cryzxu6 width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-light)" stroke-width="2">
+                            <circle b-lu7cryzxu6 cx="11" cy="11" r="8"></circle>
+                            <line b-lu7cryzxu6 x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input b-lu7cryzxu6 id="search-modal-input" name="q" type="text" class="search-input-field" 
+                               placeholder="Search experiences, spatial platforms, AI interfaces..." autocomplete="off" />
+                        <button b-lu7cryzxu6 type="button" class="btn-nexora-icon" data-close-search aria-label="Close search">
+                            <svg b-lu7cryzxu6 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line b-lu7cryzxu6 x1="18" y1="6" x2="6" y2="18"></line>
+                                <line b-lu7cryzxu6 x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div b-lu7cryzxu6 class="p-3 d-flex flex-wrap align-items-center justify-content-between gap-2" style="background: rgba(255,255,255,0.02); font-size: 0.82rem; color: var(--text-muted);">
+                        <div b-lu7cryzxu6 class="d-flex gap-2 align-items-center">
+                            <span b-lu7cryzxu6>Popular:</span>
+                            <a class="badge-futuristic py-1 px-2" style="text-transform:none;" href="/Explore?category=AI%20%26%20Spatial">AI & Spatial</a>
+                            <a class="badge-futuristic py-1 px-2" style="text-transform:none;" href="/Explore?category=Fintech%20Platform">Fintech</a>
+                            <a class="badge-futuristic py-1 px-2" style="text-transform:none;" href="/Services">Design Systems</a>
+                        </div>
+                        <div b-lu7cryzxu6 class="d-none d-sm-block">Press <kbd b-lu7cryzxu6 class="px-2 py-1 rounded" style="background: rgba(255,255,255,0.08); color: var(--text-secondary); border: 1px solid var(--border-subtle);">ESC</kbd> to exit</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Page Content Body -->
+        <main b-lu7cryzxu6 role="main">
+            
+<!-- About Studio Hero -->
+<section class="py-5 my-4 position-relative">
+    <div class="container-xl px-4">
+        <div class="max-w-800 mx-auto text-center mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot"></span>
+                Creative Engineering Collective
+            </span>
+            <h1 class="display-hero mb-4">
+                Pioneering The <br />
+                <span class="text-gradient-purple">Spatial Era</span> Of Web.
+            </h1>
+            <p class="lead-text mx-auto" style="max-width: 680px;">
+                NEXORA was founded on a singular conviction: as screens evolve into spatial computing, the Web must transform from static rectangles into living, cinematic environments.
+            </p>
+        </div>
+
+        <!-- Vision Manifesto Cards -->
+        <div class="row g-4 my-5">
+            <div class="col-lg-4 col-md-6 reveal-init">
+                <div class="glass-card h-100">
+                    <span class="font-mono text-gradient-purple fw-bold d-block mb-3">01 / PHILOSOPHY</span>
+                    <h3 class="text-white mb-3" style="font-size: 1.45rem;">Zero Generic UI</h3>
+                    <p class="text-secondary small" style="line-height: 1.7;">
+                        Cookie-cutter templates and generic components kill brand equity. Every NEXORA artifact is drawn from bespoke design tokens, custom WebGL shaders, and handcrafted typography.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 reveal-init">
+                <div class="glass-card h-100">
+                    <span class="font-mono text-gradient-cyan fw-bold d-block mb-3">02 / CRAFT</span>
+                    <h3 class="text-white mb-3" style="font-size: 1.45rem;">Kinetic Ergonomics</h3>
+                    <p class="text-secondary small" style="line-height: 1.7;">
+                        Micro-interactions must feel like organic physics, not robotic keyframes. We measure motion curves down to the millisecond to ensure fluid cognitive delight.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 reveal-init">
+                <div class="glass-card h-100">
+                    <span class="font-mono text-white fw-bold d-block mb-3">03 / ARCHITECTURE</span>
+                    <h3 class="text-white mb-3" style="font-size: 1.45rem;">C# &amp; EF Core Engine</h3>
+                    <p class="text-secondary small" style="line-height: 1.7;">
+                        Beneath stunning visuals lies rock-solid Microsoft .NET architecture. Zero runtime crashes, sub-millisecond database queries, and resilient decentralized cloud orchestration.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Studio Leadership Team -->
+        <div class="my-5 py-5 border-top border-secondary border-opacity-15">
+            <div class="text-center mb-5 reveal-init">
+                <span class="badge-futuristic mb-3">
+                    <span class="badge-dot emerald"></span>
+                    Minds Behind NEXORA
+                </span>
+                <h2 class="display-section mb-3">Studio <span class="text-gradient-cyan">Leadership.</span></h2>
+                <p class="lead-text mx-auto" style="max-width: 600px;">
+                    A rare blend of visionary creative directors, spatial computing mathematicians, and enterprise systems architects.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Leader 1 -->
+                <div class="col-lg-3 col-sm-6 reveal-init">
+                    <div class="glass-card text-center p-4 h-100" data-tilt>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=350&q=80" 
+                             alt="Alexander Vance" class="rounded-circle mb-3 border border-2 border-primary" 
+                             style="width: 110px; height: 110px; object-fit: cover; box-shadow: 0 0 20px -3px var(--primary-glow);" />
+                        <h4 class="text-white mb-1" style="font-size: 1.25rem;">Alexander Vance</h4>
+                        <div class="font-mono small text-gradient-purple mb-3">Executive Design Director</div>
+                        <p class="text-secondary small mb-0">Former Head of Spatial Design at Apple Vision Pro partner studios. 14x Awwwards Winner.</p>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="col-lg-3 col-sm-6 reveal-init">
+                    <div class="glass-card text-center p-4 h-100" data-tilt>
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=350&q=80" 
+                             alt="Elena Rostova" class="rounded-circle mb-3 border border-2" 
+                             style="width: 110px; height: 110px; object-fit: cover; border-color: var(--accent-cyan); box-shadow: 0 0 20px -3px var(--accent-cyan-glow);" />
+                        <h4 class="text-white mb-1" style="font-size: 1.25rem;">Elena Rostova</h4>
+                        <div class="font-mono small text-gradient-cyan mb-3">Chief Spatial Engineer</div>
+                        <p class="text-secondary small mb-0">Specializes in GPU shader compilation, WebGL 2.0 physics, and real-time volumetric streaming.</p>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="col-lg-3 col-sm-6 reveal-init">
+                    <div class="glass-card text-center p-4 h-100" data-tilt>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=350&q=80" 
+                             alt="Marcus Thorne" class="rounded-circle mb-3 border border-2" 
+                             style="width: 110px; height: 110px; object-fit: cover; border-color: #3b82f6; box-shadow: 0 0 20px -3px rgba(59,130,246,0.4);" />
+                        <h4 class="text-white mb-1" style="font-size: 1.25rem;">Marcus Thorne</h4>
+                        <div class="font-mono small text-white mb-3">VP of Systems Engineering</div>
+                        <p class="text-secondary small mb-0">Architected high-throughput financial telemetries handling $20B+ daily volume across .NET backends.</p>
+                    </div>
+                </div>
+
+                <!-- Leader 4 -->
+                <div class="col-lg-3 col-sm-6 reveal-init">
+                    <div class="glass-card text-center p-4 h-100" data-tilt>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80" 
+                             alt="Kaori Tanaka" class="rounded-circle mb-3 border border-2 border-warning" 
+                             style="width: 110px; height: 110px; object-fit: cover; box-shadow: 0 0 20px -3px rgba(245,158,11,0.4);" />
+                        <h4 class="text-white mb-1" style="font-size: 1.25rem;">Kaori Tanaka</h4>
+                        <div class="font-mono small text-gradient-amber mb-3">Director of AI Interactions</div>
+                        <p class="text-secondary small mb-0">Pioneered cognitive generative interfaces and contextual human-AI micro-workflows in Tokyo &amp; SF.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Milestones Timeline -->
+        <div class="my-5 py-5 border-top border-secondary border-opacity-15">
+            <div class="text-center mb-5 reveal-init">
+                <span class="badge-futuristic mb-3">
+                    <span class="badge-dot"></span>
+                    Trajectory &amp; Impact
+                </span>
+                <h2 class="display-section mb-3">Studio <span class="text-gradient-purple">Milestones.</span></h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="p-4 rounded-4 mb-3" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="font-mono text-gradient-purple fw-bold">2026 — Present</span>
+                            <span class="badge-futuristic py-1 px-2" style="font-size: 0.7rem;">Spatial Web Era</span>
+                        </div>
+                        <h4 class="text-white mb-2">Launch of NEXORA Neural Engine</h4>
+                        <p class="text-secondary small mb-0">
+                            Pioneered real-time 3D volumetric ray-tracing inside Web browsers at zero latency, powering spatial computing apps for Fortune 50 clients.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-4 mb-3" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="font-mono text-gradient-cyan fw-bold">2025</span>
+                            <span class="badge-futuristic py-1 px-2" style="font-size: 0.7rem;">Global Expansion</span>
+                        </div>
+                        <h4 class="text-white mb-2">Awwwards Studio of the Year Nominee</h4>
+                        <p class="text-secondary small mb-0">
+                            Expanded creative hubs to Tokyo and London. Surpassed $100M+ in collective client valuation increases driven by NEXORA product launches.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <span class="font-mono text-white fw-bold">2023 — 2024</span>
+                            <span class="badge-futuristic py-1 px-2" style="font-size: 0.7rem;">Genesis</span>
+                        </div>
+                        <h4 class="text-white mb-2">Foundation of NEXORA Labs</h4>
+                        <p class="text-secondary small mb-0">
+                            Established by senior engineering directors from Silicon Valley and Tokyo to bridge enterprise C# reliability with high-fashion digital art direction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div class="text-center py-5">
+            <h2 class="display-card text-white mb-4">Ready to Collaborate with Our Directors?</h2>
+            <a class="btn-nexora-primary" href="/Home/Contact">
+                <span>Start a Conversation</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+        </main>
+
+        <!-- Cinematic Footer -->
+        <footer b-lu7cryzxu6 class="nexora-footer">
+            <div b-lu7cryzxu6 class="container-xl px-4">
+                <div b-lu7cryzxu6 class="row g-5 mb-5">
+                    <!-- Brand Column -->
+                    <div b-lu7cryzxu6 class="col-lg-4 col-md-6">
+                        <div b-lu7cryzxu6 class="navbar-brand-logo mb-3">
+                            <div b-lu7cryzxu6 class="brand-icon-gem">
+                                <svg b-lu7cryzxu6 viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon b-lu7cryzxu6 points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline b-lu7cryzxu6 points="2 17 12 22 22 17"></polyline>
+                                    <polyline b-lu7cryzxu6 points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <span b-lu7cryzxu6>NEXORA</span>
+                        </div>
+                        <p b-lu7cryzxu6 class="text-secondary small mb-4" style="line-height: 1.7; max-width: 340px;">
+                            Architecting the next era of digital experiences. We bridge human perception, spatial computing, and high-performance Web architecture for category-defining products.
+                        </p>
+                        <div b-lu7cryzxu6 class="d-inline-flex align-items-center gap-2 py-1 px-3 rounded-pill" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25);">
+                            <span b-lu7cryzxu6 class="badge-dot emerald"></span>
+                            <span b-lu7cryzxu6 style="font-size: 0.78rem; font-family: var(--font-mono); color: #34d399;">All Systems Operational • 14ms Edge Latency</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links Column -->
+                    <div b-lu7cryzxu6 class="col-lg-2 col-md-6 col-6">
+                        <h6 b-lu7cryzxu6 class="text-white text-uppercase font-mono mb-3" style="font-size: 0.8rem; letter-spacing: 0.08em;">Studio</h6>
+                        <a class="footer-link" href="/">Home</a>
+                        <a class="footer-link" href="/Explore">Explore Portfolio</a>
+                        <a class="footer-link" href="/Services">Services & Strategy</a>
+                        <a class="footer-link" href="/Home/About">About NEXORA</a>
+                        <a class="footer-link" href="/Home/Contact">Initiate Project</a>
+                    </div>
+
+                    <!-- Technology Links Column -->
+                    <div b-lu7cryzxu6 class="col-lg-2 col-md-6 col-6">
+                        <h6 b-lu7cryzxu6 class="text-white text-uppercase font-mono mb-3" style="font-size: 0.8rem; letter-spacing: 0.08em;">Capability</h6>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">Spatial WebXR</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">WebGL 2.0 Shaders</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">ASP.NET Core .NET 10</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">Entity Framework Core</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">Cryptographic Systems</span>
+                    </div>
+
+                    <!-- Newsletter Column -->
+                    <div b-lu7cryzxu6 class="col-lg-4 col-md-6">
+                        <h6 b-lu7cryzxu6 class="text-white text-uppercase font-mono mb-3" style="font-size: 0.8rem; letter-spacing: 0.08em;">NEXORA Insider Dispatch</h6>
+                        <p b-lu7cryzxu6 class="text-secondary small mb-3">
+                            Receive confidential design drops, spatial computing blueprints, and engineering breakthroughs directly to your inbox.
+                        </p>
+                        <form class="newsletter-ajax-form d-flex gap-2">
+                            <input b-lu7cryzxu6 type="email" required placeholder="Enter work email address..." class="form-control-nexora py-2" style="border-radius: var(--radius-pill); font-size: 0.88rem;" />
+                            <button b-lu7cryzxu6 type="submit" class="btn-nexora-primary py-2 px-3 flex-shrink-0" style="font-size: 0.88rem;">
+                                Subscribe
+                            </button>
+                        </form>
+                        <div b-lu7cryzxu6 class="d-flex gap-3 mt-4">
+                            <a b-lu7cryzxu6 href="#" class="btn-nexora-icon" title="Twitter / X" aria-label="X Twitter">
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path b-lu7cryzxu6 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a b-lu7cryzxu6 href="#" class="btn-nexora-icon" title="GitHub" aria-label="GitHub">
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path b-lu7cryzxu6 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a b-lu7cryzxu6 href="#" class="btn-nexora-icon" title="LinkedIn" aria-label="LinkedIn">
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path b-lu7cryzxu6 d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect b-lu7cryzxu6 x="2" y="9" width="4" height="12"></rect><circle b-lu7cryzxu6 cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Subfooter -->
+                <div b-lu7cryzxu6 class="pt-4 border-top border-secondary border-opacity-15 d-flex flex-wrap align-items-center justify-content-between gap-3 text-secondary small">
+                    <div b-lu7cryzxu6>
+                        &copy; 2026 NEXORA Digital Systems Inc. All rights reserved. Built with ASP.NET Core &amp; EF Core.
+                    </div>
+                    <div b-lu7cryzxu6 class="d-flex gap-4">
+                        <a class="text-secondary text-decoration-none hover-white" href="/Home/Privacy">Privacy Policy</a>
+                        <a class="text-secondary text-decoration-none hover-white" href="/Home/Terms">Terms of Experience</a>
+                        <a class="text-muted text-decoration-none hover-white" href="/Admin">Staff Portal</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=KL3NgXaJyxKery_TQIID_7GmVJA3vJYApIPB8qGIL88"></script>
+    
+</body>
+</html>

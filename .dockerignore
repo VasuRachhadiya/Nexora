@@ -1,0 +1,12 @@
+# Docker ignore
+**/.git
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/*.db
+**/*.mdf
+**/*.ldf
+**/*.log
+.system_generated
+_system_generated

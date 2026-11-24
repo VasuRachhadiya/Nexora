@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Signature Experiences — Premium Futuristic Digital Experience</title>
+    <meta name="description" content="NEXORA is an award-winning creative engineering studio architecting cinematic digital products, spatial interfaces, and high-performance Web systems." />
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="NEXORA — Premium Modern Web Experience" />
+    <meta property="og:description" content="Ideas deserve extraordinary experiences. High-performance design & spatial digital products." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap & Site CSS -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css?v=btilhPGYfJ_koD7CUNzHIjFAkvI-58ajP_CBK7V9tW8" />
+</head>
+<body>
+    <!-- Ambient Lighting Mesh & Interactive Particle Canvas -->
+    <div b-lu7cryzxu6 class="ambient-mesh" aria-hidden="true">
+        <div b-lu7cryzxu6 class="ambient-orb ambient-orb-1"></div>
+        <div b-lu7cryzxu6 class="ambient-orb ambient-orb-2"></div>
+        <div b-lu7cryzxu6 class="ambient-orb ambient-orb-3"></div>
+    </div>
+    <canvas b-lu7cryzxu6 id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- App Wrapper -->
+    <div b-lu7cryzxu6 class="app-content">
+        <!-- Floating Glassmorphic Navigation -->
+        <header b-lu7cryzxu6>
+            <nav b-lu7cryzxu6 class="nexora-navbar">
+                <div b-lu7cryzxu6 class="navbar-inner">
+                    <!-- Brand -->
+                    <a class="navbar-brand-logo" href="/">
+                        <div b-lu7cryzxu6 class="brand-icon-gem">
+                            <svg b-lu7cryzxu6 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon b-lu7cryzxu6 points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline b-lu7cryzxu6 points="2 17 12 22 22 17"></polyline>
+                                <polyline b-lu7cryzxu6 points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <span b-lu7cryzxu6>NEXORA</span>
+                    </a>
+
+                    <!-- Nav Items Cluster -->
+                    <ul b-lu7cryzxu6 class="nav-links-cluster">
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/">Home</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item active" href="/Explore">Explore</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/Services">Services</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/Home/About">About</a>
+                        </li>
+                        <li b-lu7cryzxu6>
+                            <a class="nav-link-item " href="/Home/Contact">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Actions Cluster -->
+                    <div b-lu7cryzxu6 class="nav-actions-cluster">
+                        <!-- Search Trigger Button -->
+                        <button b-lu7cryzxu6 type="button" class="btn-nexora-icon" data-open-search title="Search experiences (Ctrl+K)">
+                            <svg b-lu7cryzxu6 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle b-lu7cryzxu6 cx="11" cy="11" r="8"></circle>
+                                <line b-lu7cryzxu6 x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+
+                            <a class="btn-nexora-ghost d-none d-sm-inline-flex" href="/Account/Login">Sign In</a>
+                            <a class="btn-nexora-primary" href="/Home/Contact">
+                                <span b-lu7cryzxu6>Get Started</span>
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line b-lu7cryzxu6 x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline b-lu7cryzxu6 points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+
+                        <!-- Mobile Hamburger Button -->
+                        <button b-lu7cryzxu6 type="button" class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                            <svg b-lu7cryzxu6 width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line b-lu7cryzxu6 x1="3" y1="12" x2="21" y2="12"></line>
+                                <line b-lu7cryzxu6 x1="3" y1="6" x2="21" y2="6"></line>
+                                <line b-lu7cryzxu6 x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile Navigation Drawer Overlay -->
+        <div b-lu7cryzxu6 class="mobile-drawer-overlay">
+            <div b-lu7cryzxu6 class="mobile-drawer">
+                <div b-lu7cryzxu6>
+                    <div b-lu7cryzxu6 class="d-flex align-items-center justify-content-between mb-4">
+                        <div b-lu7cryzxu6 class="navbar-brand-logo">
+                            <div b-lu7cryzxu6 class="brand-icon-gem">
+                                <svg b-lu7cryzxu6 viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon b-lu7cryzxu6 points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <span b-lu7cryzxu6>NEXORA</span>
+                        </div>
+                        <button b-lu7cryzxu6 type="button" class="mobile-drawer-close btn-nexora-icon" aria-label="Close menu">
+                            <svg b-lu7cryzxu6 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line b-lu7cryzxu6 x1="18" y1="6" x2="6" y2="18"></line>
+                                <line b-lu7cryzxu6 x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div b-lu7cryzxu6 class="mobile-drawer-links">
+                        <a class="mobile-drawer-link" href="/">Home</a>
+                        <a class="mobile-drawer-link" href="/Explore">Explore</a>
+                        <a class="mobile-drawer-link" href="/Services">Services</a>
+                        <a class="mobile-drawer-link" href="/Home/About">About Studio</a>
+                        <a class="mobile-drawer-link" href="/Home/Contact">Contact</a>
+                        <a class="mobile-drawer-link" href="/Search">Global Search</a>
+                    </div>
+                </div>
+
+                <div b-lu7cryzxu6 class="mt-4 pt-4 border-top border-secondary border-opacity-25">
+                        <div b-lu7cryzxu6 class="d-flex flex-column gap-2">
+                            <a class="btn-nexora-secondary w-100 justify-content-center" href="/Account/Login">Sign In</a>
+                            <a class="btn-nexora-primary w-100 justify-content-center" href="/Account/Register">Join NEXORA</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Search Dialog Modal (Ctrl + K) -->
+        <div b-lu7cryzxu6 class="nexora-search-modal" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+            <div b-lu7cryzxu6 class="search-dialog-box">
+                <form method="get" action="/Search">
+                    <div b-lu7cryzxu6 class="search-input-header">
+                        <svg b-lu7cryzxu6 width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary-light)" stroke-width="2">
+                            <circle b-lu7cryzxu6 cx="11" cy="11" r="8"></circle>
+                            <line b-lu7cryzxu6 x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input b-lu7cryzxu6 id="search-modal-input" name="q" type="text" class="search-input-field" 
+                               placeholder="Search experiences, spatial platforms, AI interfaces..." autocomplete="off" />
+                        <button b-lu7cryzxu6 type="button" class="btn-nexora-icon" data-close-search aria-label="Close search">
+                            <svg b-lu7cryzxu6 width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line b-lu7cryzxu6 x1="18" y1="6" x2="6" y2="18"></line>
+                                <line b-lu7cryzxu6 x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div b-lu7cryzxu6 class="p-3 d-flex flex-wrap align-items-center justify-content-between gap-2" style="background: rgba(255,255,255,0.02); font-size: 0.82rem; color: var(--text-muted);">
+                        <div b-lu7cryzxu6 class="d-flex gap-2 align-items-center">
+                            <span b-lu7cryzxu6>Popular:</span>
+                            <a class="badge-futuristic py-1 px-2" style="text-transform:none;" href="/Explore?category=AI%20%26%20Spatial">AI & Spatial</a>
+                            <a class="badge-futuristic py-1 px-2" style="text-transform:none;" href="/Explore?category=Fintech%20Platform">Fintech</a>
+                            <a class="badge-futuristic py-1 px-2" style="text-transform:none;" href="/Services">Design Systems</a>
+                        </div>
+                        <div b-lu7cryzxu6 class="d-none d-sm-block">Press <kbd b-lu7cryzxu6 class="px-2 py-1 rounded" style="background: rgba(255,255,255,0.08); color: var(--text-secondary); border: 1px solid var(--border-subtle);">ESC</kbd> to exit</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Page Content Body -->
+        <main b-lu7cryzxu6 role="main">
+            
+<section class="py-5 my-4">
+    <div class="container-xl px-4">
+        <!-- Header -->
+        <div class="max-w-800 mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot cyan"></span>
+                Curated Architecture
+            </span>
+            <h1 class="display-hero mb-3">
+                Explore <span class="text-gradient-purple">Experiences.</span>
+            </h1>
+            <p class="lead-text mb-0">
+                Immerse yourself in our portfolio of spatial computing systems, luxury WebGL configurators, and enterprise platforms.
+            </p>
+        </div>
+
+        <!-- Filter Tabs & Search Controls -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-5 p-3 rounded-4 glass-card reveal-init">
+            <!-- Category Pills -->
+            <div class="d-flex flex-wrap gap-2">
+                <a data-explore-filter="All" class="badge-futuristic py-2 px-3 active border-primary text-white" style="cursor: pointer; text-decoration: none;" href="/Explore?category=All">
+                    All Artifacts
+                </a>
+                    <a data-explore-filter="AI &amp; Spatial" class="badge-futuristic py-2 px-3 " style="cursor: pointer; text-decoration: none;" href="/Explore?category=AI%20%26%20Spatial">
+                        AI &amp; Spatial
+                    </a>
+                    <a data-explore-filter="Autonomous Systems" class="badge-futuristic py-2 px-3 " style="cursor: pointer; text-decoration: none;" href="/Explore?category=Autonomous%20Systems">
+                        Autonomous Systems
+                    </a>
+                    <a data-explore-filter="Brand Architecture" class="badge-futuristic py-2 px-3 " style="cursor: pointer; text-decoration: none;" href="/Explore?category=Brand%20Architecture">
+                        Brand Architecture
+                    </a>
+                    <a data-explore-filter="Digital Product" class="badge-futuristic py-2 px-3 " style="cursor: pointer; text-decoration: none;" href="/Explore?category=Digital%20Product">
+                        Digital Product
+                    </a>
+                    <a data-explore-filter="Fintech Platform" class="badge-futuristic py-2 px-3 " style="cursor: pointer; text-decoration: none;" href="/Explore?category=Fintech%20Platform">
+                        Fintech Platform
+                    </a>
+                    <a data-explore-filter="Immersive 3D" class="badge-futuristic py-2 px-3 " style="cursor: pointer; text-decoration: none;" href="/Explore?category=Immersive%203D">
+                        Immersive 3D
+                    </a>
+            </div>
+
+            <!-- Search Field -->
+            <form method="get" class="d-flex align-items-center gap-2" action="/Explore">
+                <input type="hidden" name="category" value="All" />
+                <div class="position-relative">
+                    <input type="text" name="q" 
+                           placeholder="Filter by keyword..." 
+                           class="form-control-nexora py-2 ps-4" 
+                           style="border-radius: var(--radius-pill); font-size: 0.85rem; width: 220px;" />
+                </div>
+                <button type="submit" class="btn-nexora-primary py-2 px-3" style="font-size: 0.85rem;">
+                    Filter
+                </button>
+            </form>
+        </div>
+
+        <!-- Experiences Grid -->
+        <div class="row g-4" id="experience-grid">
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="AI &amp; Spatial">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: #8b5cf6; box-shadow: 0 0 8px #8b5cf6;"></span>
+                                    AI &amp; Spatial
+                                </span>
+                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Aura Neural Spatial OS" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">Aura Dynamics • 2026</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">4.2x Faster Cognition</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">Aura Neural Spatial OS</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    Next-generation spatial computing interface for cognitive computing hardware
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">Three.js</span>
+                                    <a class="btn-nexora-ghost" href="/Explore/Details/1">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="Fintech Platform">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: #06b6d4; box-shadow: 0 0 8px #06b6d4;"></span>
+                                    Fintech Platform
+                                </span>
+                                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Quantum Vault Fintech" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">Vanguard Synthetics • 2025</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">$14.8B Volume Handled</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">Quantum Vault Fintech</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    Cryptographic wealth management with real-time biometric telemetry
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">React 19</span>
+                                    <a class="btn-nexora-ghost" href="/Explore/Details/2">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="Autonomous Systems">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: #3b82f6; box-shadow: 0 0 8px #3b82f6;"></span>
+                                    Autonomous Systems
+                                </span>
+                                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Kinesis Autonomous Mobility" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">Kinesis Robotics • 2026</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">99.999% Reliability</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">Kinesis Autonomous Mobility</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    Fleet orchestration visualizer and dynamic vehicle telemetry
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">C#</span>
+                                    <a class="btn-nexora-ghost" href="/Explore/Details/3">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="Digital Product">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+                                    Digital Product
+                                </span>
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Solis Energy Grid Matrix" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">Solis Orbital • 2025</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">-38% Energy Waste</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">Solis Energy Grid Matrix</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    Planetary clean energy distribution &amp; predictive microgrid management
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">ASP.NET Core</span>
+                                    <a class="btn-nexora-ghost" href="/Explore/Details/4">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="Immersive 3D">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: #f59e0b; box-shadow: 0 0 8px #f59e0b;"></span>
+                                    Immersive 3D
+                                </span>
+                                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Chronos Luxury Horology" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">Chronos Geneve • 2026</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">&#x2B;310% Online Conversions</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">Chronos Luxury Horology</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    Interactive 3D mechanical watch customizer and haute horlogerie boutique
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">Three.js</span>
+                                    <a class="btn-nexora-ghost" href="/Explore/Details/5">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="Brand Architecture">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: #ec4899; box-shadow: 0 0 8px #ec4899;"></span>
+                                    Brand Architecture
+                                </span>
+                                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Vesper Identity &amp; Brand Architecture" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">Vesper Cyber Labs • 2025</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">Awwwards Site of the Day</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">Vesper Identity &amp; Brand Architecture</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    Futuristic kinetic brand system and generative design tokens
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">SVG Animation</span>
+                                    <a class="btn-nexora-ghost" href="/Explore/Details/6">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</section>
+
+        </main>
+
+        <!-- Cinematic Footer -->
+        <footer b-lu7cryzxu6 class="nexora-footer">
+            <div b-lu7cryzxu6 class="container-xl px-4">
+                <div b-lu7cryzxu6 class="row g-5 mb-5">
+                    <!-- Brand Column -->
+                    <div b-lu7cryzxu6 class="col-lg-4 col-md-6">
+                        <div b-lu7cryzxu6 class="navbar-brand-logo mb-3">
+                            <div b-lu7cryzxu6 class="brand-icon-gem">
+                                <svg b-lu7cryzxu6 viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polygon b-lu7cryzxu6 points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline b-lu7cryzxu6 points="2 17 12 22 22 17"></polyline>
+                                    <polyline b-lu7cryzxu6 points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <span b-lu7cryzxu6>NEXORA</span>
+                        </div>
+                        <p b-lu7cryzxu6 class="text-secondary small mb-4" style="line-height: 1.7; max-width: 340px;">
+                            Architecting the next era of digital experiences. We bridge human perception, spatial computing, and high-performance Web architecture for category-defining products.
+                        </p>
+                        <div b-lu7cryzxu6 class="d-inline-flex align-items-center gap-2 py-1 px-3 rounded-pill" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25);">
+                            <span b-lu7cryzxu6 class="badge-dot emerald"></span>
+                            <span b-lu7cryzxu6 style="font-size: 0.78rem; font-family: var(--font-mono); color: #34d399;">All Systems Operational • 14ms Edge Latency</span>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links Column -->
+                    <div b-lu7cryzxu6 class="col-lg-2 col-md-6 col-6">
+                        <h6 b-lu7cryzxu6 class="text-white text-uppercase font-mono mb-3" style="font-size: 0.8rem; letter-spacing: 0.08em;">Studio</h6>
+                        <a class="footer-link" href="/">Home</a>
+                        <a class="footer-link" href="/Explore">Explore Portfolio</a>
+                        <a class="footer-link" href="/Services">Services & Strategy</a>
+                        <a class="footer-link" href="/Home/About">About NEXORA</a>
+                        <a class="footer-link" href="/Home/Contact">Initiate Project</a>
+                    </div>
+
+                    <!-- Technology Links Column -->
+                    <div b-lu7cryzxu6 class="col-lg-2 col-md-6 col-6">
+                        <h6 b-lu7cryzxu6 class="text-white text-uppercase font-mono mb-3" style="font-size: 0.8rem; letter-spacing: 0.08em;">Capability</h6>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">Spatial WebXR</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">WebGL 2.0 Shaders</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">ASP.NET Core .NET 10</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">Entity Framework Core</span>
+                        <span b-lu7cryzxu6 class="footer-link text-muted">Cryptographic Systems</span>
+                    </div>
+
+                    <!-- Newsletter Column -->
+                    <div b-lu7cryzxu6 class="col-lg-4 col-md-6">
+                        <h6 b-lu7cryzxu6 class="text-white text-uppercase font-mono mb-3" style="font-size: 0.8rem; letter-spacing: 0.08em;">NEXORA Insider Dispatch</h6>
+                        <p b-lu7cryzxu6 class="text-secondary small mb-3">
+                            Receive confidential design drops, spatial computing blueprints, and engineering breakthroughs directly to your inbox.
+                        </p>
+                        <form class="newsletter-ajax-form d-flex gap-2">
+                            <input b-lu7cryzxu6 type="email" required placeholder="Enter work email address..." class="form-control-nexora py-2" style="border-radius: var(--radius-pill); font-size: 0.88rem;" />
+                            <button b-lu7cryzxu6 type="submit" class="btn-nexora-primary py-2 px-3 flex-shrink-0" style="font-size: 0.88rem;">
+                                Subscribe
+                            </button>
+                        </form>
+                        <div b-lu7cryzxu6 class="d-flex gap-3 mt-4">
+                            <a b-lu7cryzxu6 href="#" class="btn-nexora-icon" title="Twitter / X" aria-label="X Twitter">
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path b-lu7cryzxu6 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a b-lu7cryzxu6 href="#" class="btn-nexora-icon" title="GitHub" aria-label="GitHub">
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path b-lu7cryzxu6 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a b-lu7cryzxu6 href="#" class="btn-nexora-icon" title="LinkedIn" aria-label="LinkedIn">
+                                <svg b-lu7cryzxu6 width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path b-lu7cryzxu6 d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect b-lu7cryzxu6 x="2" y="9" width="4" height="12"></rect><circle b-lu7cryzxu6 cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Subfooter -->
+                <div b-lu7cryzxu6 class="pt-4 border-top border-secondary border-opacity-15 d-flex flex-wrap align-items-center justify-content-between gap-3 text-secondary small">
+                    <div b-lu7cryzxu6>
+                        &copy; 2026 NEXORA Digital Systems Inc. All rights reserved. Built with ASP.NET Core &amp; EF Core.
+                    </div>
+                    <div b-lu7cryzxu6 class="d-flex gap-4">
+                        <a class="text-secondary text-decoration-none hover-white" href="/Home/Privacy">Privacy Policy</a>
+                        <a class="text-secondary text-decoration-none hover-white" href="/Home/Terms">Terms of Experience</a>
+                        <a class="text-muted text-decoration-none hover-white" href="/Admin">Staff Portal</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=KL3NgXaJyxKery_TQIID_7GmVJA3vJYApIPB8qGIL88"></script>
+    
+</body>
+</html>
