@@ -1,0 +1,150 @@
+@model Nexora.ViewModels.ServicesViewModel
+@{
+    ViewData["Title"] = "Services & Strategic Capabilities";
+}
+
+<section class="py-5 my-4">
+    <div class="container-xl px-4">
+        <!-- Header -->
+        <div class="max-w-800 mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot cyan"></span>
+                Strategic Capabilities
+            </span>
+            <h1 class="display-hero mb-3">
+                Disciplines Of The <br />
+                <span class="text-gradient-purple">Digital Avant-Garde.</span>
+            </h1>
+            <p class="lead-text mb-0">
+                We synthesize art-directed digital aesthetics with mission-critical C# engineering to help forward-looking organizations lead their markets.
+            </p>
+        </div>
+
+        <!-- 4 Core Service Cards -->
+        <div class="row g-4 mb-5">
+            @foreach (var s in Model.Services)
+            {
+                <div class="col-lg-6 reveal-init">
+                    <div class="feature-card p-4 p-md-5 h-100" data-tilt>
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="feature-icon-wrapper mb-0" style="width: 52px; height: 52px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <span class="font-mono text-muted small">CAPABILITY 0@(s.Order)</span>
+                        </div>
+
+                        <h3 class="display-card text-white mb-2">@s.Title</h3>
+                        <p class="font-mono text-gradient-cyan small mb-3">@s.Tagline</p>
+                        <p class="text-secondary small mb-4" style="line-height: 1.7;">
+                            @s.Description
+                        </p>
+
+                        <!-- Features Checklist -->
+                        <div class="pt-3 border-top border-secondary border-opacity-15 mb-4">
+                            <div class="font-mono text-muted small text-uppercase mb-3">Core Modules Included:</div>
+                            <div class="d-flex flex-column gap-2">
+                                @foreach (var feat in s.FeaturesList.Split('|'))
+                                {
+                                    <div class="d-flex align-items-center gap-2 text-white small">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <span>@feat.Trim()</span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <!-- Deliverables -->
+                        <div class="p-3 rounded-3 mt-auto" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                            <span class="font-mono text-muted small text-uppercase d-block mb-1">Deliverables</span>
+                            <span class="text-secondary small">@s.Deliverables</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Strategic Engagement Models -->
+        <div class="my-5 py-5 border-top border-secondary border-opacity-15">
+            <div class="text-center mb-5 reveal-init">
+                <span class="badge-futuristic mb-3">
+                    <span class="badge-dot emerald"></span>
+                    Collaboration Tiers
+                </span>
+                <h2 class="display-section mb-3">Engagement <span class="text-gradient-cyan">Models.</span></h2>
+                <p class="lead-text mx-auto" style="max-width: 600px;">
+                    Tailored structures engineered for venture-backed hyper-growth and enterprise scale.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Model 1 -->
+                <div class="col-lg-4 reveal-init">
+                    <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column" data-tilt>
+                        <span class="font-mono text-muted small text-uppercase mb-2">Tier 01</span>
+                        <h4 class="text-white mb-2" style="font-size: 1.4rem;">Design System Sprint</h4>
+                        <p class="text-secondary small mb-4">
+                            Rapid transformation of your product's visual grammar, component architecture, and kinetic motion tokens in 6 intensive weeks.
+                        </p>
+                        <ul class="text-secondary small ps-3 mb-4 flex-grow-1" style="line-height: 1.8;">
+                            <li>Complete Figma Token Architecture</li>
+                            <li>Interactive Prototype with Physics Curves</li>
+                            <li>Component Library Spec &amp; Guidelines</li>
+                            <li>Design Handoff Workshop</li>
+                        </ul>
+                        <a asp-controller="Home" asp-action="Contact" class="btn-nexora-secondary w-100 justify-content-center">Inquire Sprint</a>
+                    </div>
+                </div>
+
+                <!-- Model 2 (Highlighted) -->
+                <div class="col-lg-4 reveal-init">
+                    <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column position-relative" data-tilt style="border-color: var(--primary); box-shadow: 0 0 35px -10px var(--primary-glow);">
+                        <span class="position-absolute top-0 end-0 badge-futuristic m-3 py-1 px-3" style="border-color: var(--primary);">Most Requested</span>
+                        <span class="font-mono text-gradient-purple small text-uppercase mb-2">Tier 02</span>
+                        <h4 class="text-white mb-2" style="font-size: 1.4rem;">Embedded Studio</h4>
+                        <p class="text-secondary small mb-4">
+                            Full-lifecycle creation of your flagship digital product, pairing our creative directors directly with your executive leadership.
+                        </p>
+                        <ul class="text-secondary small ps-3 mb-4 flex-grow-1" style="line-height: 1.8;">
+                            <li>End-to-End Visual Art Direction</li>
+                            <li>WebGL / Three.js 3D Interactive Layers</li>
+                            <li>Full ASP.NET Core &amp; EF Core Backend</li>
+                            <li>Lighthouse 100/100 Core Web Vitals Audits</li>
+                            <li>12-Week Dedicated Sprint Cadence</li>
+                        </ul>
+                        <a asp-controller="Home" asp-action="Contact" class="btn-nexora-primary w-100 justify-content-center">Deploy Embedded Team</a>
+                    </div>
+                </div>
+
+                <!-- Model 3 -->
+                <div class="col-lg-4 reveal-init">
+                    <div class="glass-card p-4 p-md-5 h-100 d-flex flex-column" data-tilt>
+                        <span class="font-mono text-muted small text-uppercase mb-2">Tier 03</span>
+                        <h4 class="text-white mb-2" style="font-size: 1.4rem;">Enterprise Architecture</h4>
+                        <p class="text-secondary small mb-4">
+                            Multi-quarter strategic partnership modernizing global multi-brand digital ecosystems, cloud microservices, and spatial pipelines.
+                        </p>
+                        <ul class="text-secondary small ps-3 mb-4 flex-grow-1" style="line-height: 1.8;">
+                            <li>Cross-Platform Design System Governance</li>
+                            <li>High-Throughput C# Microservices</li>
+                            <li>Spatial Computing &amp; VisionOS Integration</li>
+                            <li>Executive Advisory &amp; Board Presentations</li>
+                        </ul>
+                        <a asp-controller="Home" asp-action="Contact" class="btn-nexora-secondary w-100 justify-content-center">Enterprise Retainer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="text-center py-5">
+            <h2 class="display-card text-white mb-3">Discuss a Custom Engagement Model</h2>
+            <p class="lead-text mx-auto mb-4" style="max-width: 580px;">We formulate custom teams matched to your technical stack and visual aspirations.</p>
+            <a asp-controller="Home" asp-action="Contact" class="btn-nexora-primary">
+                <span>Request Discovery Call</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+</section>

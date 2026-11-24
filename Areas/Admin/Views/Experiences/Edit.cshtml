@@ -1,0 +1,93 @@
+@model Nexora.Models.ExperienceItem
+@{
+    ViewData["Title"] = $"Edit {Model.Title}";
+}
+
+<div class="mb-4">
+    <a asp-action="Index" class="text-secondary text-decoration-none d-inline-flex align-items-center gap-2 small">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Back to Artifacts</span>
+    </a>
+</div>
+
+<div class="glass-card p-4 p-md-5 max-w-800">
+    <h2 class="display-card text-white mb-2">Edit Artifact</h2>
+    <p class="text-secondary small mb-4">Update metadata, performance metrics, and media for @Model.Title.</p>
+
+    <form asp-action="Edit" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-8">
+                <label asp-for="Title" class="form-label-nexora"></label>
+                <input asp-for="Title" class="form-control-nexora" required />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Category" class="form-label-nexora"></label>
+                <input asp-for="Category" class="form-control-nexora" required />
+                <span asp-validation-for="Category" class="text-danger small"></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Subtitle" class="form-label-nexora"></label>
+            <input asp-for="Subtitle" class="form-control-nexora" required />
+            <span asp-validation-for="Subtitle" class="text-danger small"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label-nexora"></label>
+            <textarea asp-for="Description" rows="4" class="form-control-nexora" required></textarea>
+            <span asp-validation-for="Description" class="text-danger small"></span>
+        </div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-4">
+                <label asp-for="Client" class="form-label-nexora"></label>
+                <input asp-for="Client" class="form-control-nexora" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="Year" class="form-label-nexora"></label>
+                <input asp-for="Year" class="form-control-nexora" />
+            </div>
+            <div class="col-md-4">
+                <label asp-for="MetricResult" class="form-label-nexora"></label>
+                <input asp-for="MetricResult" class="form-control-nexora" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImageUrl" class="form-label-nexora"></label>
+            <input asp-for="ImageUrl" class="form-control-nexora" required />
+            <span asp-validation-for="ImageUrl" class="text-danger small"></span>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-md-6">
+                <label asp-for="TechStack" class="form-label-nexora"></label>
+                <input asp-for="TechStack" class="form-control-nexora" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="AccentColor" class="form-label-nexora"></label>
+                <input asp-for="AccentColor" class="form-control-nexora" />
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-4 mb-4">
+            <div class="form-check">
+                <input asp-for="IsFeatured" class="form-check-input" style="background-color: rgba(255,255,255,0.1); border-color: var(--border-subtle);" />
+                <label asp-for="IsFeatured" class="form-check-label text-white small">Feature on Homepage</label>
+            </div>
+        </div>
+
+        <div class="d-flex gap-3">
+            <button type="submit" class="btn-nexora-primary py-2 px-4">
+                <span>Save Modifications</span>
+            </button>
+            <a asp-action="Index" class="btn-nexora-secondary py-2 px-4">Cancel</a>
+        </div>
+    </form>
+</div>

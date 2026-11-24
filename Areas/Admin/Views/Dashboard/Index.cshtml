@@ -1,0 +1,159 @@
+@model Nexora.ViewModels.AdminDashboardViewModel
+@{
+    ViewData["Title"] = "Executive Command Dashboard";
+}
+
+<div class="mb-5">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div>
+            <span class="badge-futuristic mb-2">
+                <span class="badge-dot emerald"></span>
+                Telemetry Live
+            </span>
+            <h1 class="display-section mb-1">Executive <span class="text-gradient-purple">Dashboard.</span></h1>
+            <p class="text-secondary small mb-0">Real-time studio health, dispatch telemetry, and asset performance.</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a asp-area="Admin" asp-controller="Experiences" asp-action="Create" class="btn-nexora-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>New Artifact</span>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn-nexora-secondary" target="_blank">
+                <span>View Live Site</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- KPI Cards Grid -->
+<div class="row g-4 mb-5">
+    <div class="col-xl-3 col-sm-6">
+        <div class="glass-card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="font-mono text-muted small text-uppercase">Artifacts</span>
+                <span class="badge-dot" style="background: #8b5cf6;"></span>
+            </div>
+            <div class="display-card text-white mb-1">@(Model.Metrics.GetValueOrDefault("Experiences", 0))</div>
+            <div class="font-mono text-gradient-purple small">Published Spatial Products</div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6">
+        <div class="glass-card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="font-mono text-muted small text-uppercase">Dispatches</span>
+                <span class="badge-dot cyan"></span>
+            </div>
+            <div class="display-card text-white mb-1">@(Model.Metrics.GetValueOrDefault("Messages", 0))</div>
+            <div class="font-mono text-gradient-cyan small">@(Model.Metrics.GetValueOrDefault("UnreadMessages", 0)) Awaiting Review</div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6">
+        <div class="glass-card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="font-mono text-muted small text-uppercase">Subscribers</span>
+                <span class="badge-dot emerald"></span>
+            </div>
+            <div class="display-card text-white mb-1">@(Model.Metrics.GetValueOrDefault("Subscribers", 0))</div>
+            <div class="font-mono text-white small">NEXORA Insider List</div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-sm-6">
+        <div class="glass-card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="font-mono text-muted small text-uppercase">Core Engine</span>
+                <span class="badge-dot emerald"></span>
+            </div>
+            <div class="display-card text-white mb-1">.NET 10</div>
+            <div class="font-mono text-muted small">SQL Server &amp; EF Core</div>
+        </div>
+    </div>
+</div>
+
+<!-- Two-Column Operational Tables -->
+<div class="row g-4">
+    <!-- Recent Inquiries -->
+    <div class="col-lg-7">
+        <div class="glass-card p-4 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h4 class="text-white mb-0" style="font-size: 1.2rem;">Recent Inquiries</h4>
+                <a asp-area="Admin" asp-controller="Messages" asp-action="Index" class="btn-nexora-ghost small">View All &rarr;</a>
+            </div>
+
+            @if (!Model.RecentMessages.Any())
+            {
+                <div class="text-secondary small py-4 text-center">No contact inquiries received yet.</div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Sender</th>
+                                <th>Category</th>
+                                <th>Subject</th>
+                                <th>Received</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var msg in Model.RecentMessages)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="fw-semibold text-white">@msg.Name</div>
+                                        <div class="font-mono text-muted" style="font-size: 0.75rem;">@msg.Email</div>
+                                    </td>
+                                    <td>
+                                        <span class="badge-futuristic py-1 px-2" style="font-size: 0.7rem;">@msg.Category</span>
+                                    </td>
+                                    <td class="text-secondary small text-truncate" style="max-width: 180px;">
+                                        @(msg.Subject ?? "No Subject")
+                                    </td>
+                                    <td class="font-mono text-muted small">
+                                        @msg.CreatedAt.ToString("MMM dd, HH:mm")
+                                    </td>
+                                    <td>
+                                        <a asp-area="Admin" asp-controller="Messages" asp-action="Details" asp-route-id="@msg.Id" class="btn-nexora-ghost small">
+                                            Open
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Quick Artifacts Overview -->
+    <div class="col-lg-5">
+        <div class="glass-card p-4 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h4 class="text-white mb-0" style="font-size: 1.2rem;">Artifact Showcase</h4>
+                <a asp-area="Admin" asp-controller="Experiences" asp-action="Index" class="btn-nexora-ghost small">Manage &rarr;</a>
+            </div>
+
+            <div class="d-flex flex-column gap-3">
+                @foreach (var exp in Model.Experiences.Take(4))
+                {
+                    <div class="d-flex align-items-center gap-3 p-2 rounded-3" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle);">
+                        <img src="@exp.ImageUrl" alt="@exp.Title" class="rounded-2" style="width: 52px; height: 42px; object-fit: cover;" />
+                        <div class="flex-grow-1 overflow-hidden">
+                            <div class="text-white fw-semibold small text-truncate">@exp.Title</div>
+                            <div class="font-mono text-muted" style="font-size: 0.72rem;">@exp.Category • @exp.MetricResult</div>
+                        </div>
+                        <a asp-area="Admin" asp-controller="Experiences" asp-action="Edit" asp-route-id="@exp.Id" class="btn-nexora-icon" style="width: 32px; height: 32px;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

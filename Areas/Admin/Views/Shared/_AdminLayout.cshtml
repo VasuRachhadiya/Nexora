@@ -1,0 +1,112 @@
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+    var currentUser = await UserManager.GetUserAsync(User);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — NEXORA Admin Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body style="background-color: #06080e;">
+    <div class="admin-shell">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom border-secondary border-opacity-15">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand-logo text-decoration-none">
+                    <div class="brand-icon-gem">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <span>NEXORA</span>
+                </a>
+                <span class="badge-futuristic py-0 px-2" style="font-size: 0.68rem; border-color: rgba(139,92,246,0.4);">Portal</span>
+            </div>
+
+            <!-- Current Admin User Badge -->
+            <div class="p-3 rounded-3 mb-4 d-flex align-items-center gap-3" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                <img src="@(currentUser?.AvatarUrl ?? "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80")" 
+                     alt="Avatar" class="rounded-circle border border-primary" style="width: 38px; height: 38px; object-fit: cover;" />
+                <div class="overflow-hidden">
+                    <div class="text-white fw-bold small text-truncate">@(currentUser?.FullName ?? "Director")</div>
+                    <div class="font-mono text-gradient-purple" style="font-size: 0.72rem;">Executive Admin</div>
+                </div>
+            </div>
+
+            <!-- Nav Items -->
+            <div class="d-flex flex-column flex-grow-1">
+                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" 
+                   class="admin-nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Dashboard" ? "active" : "")">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a asp-area="Admin" asp-controller="Experiences" asp-action="Index" 
+                   class="admin-nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Experiences" ? "active" : "")">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>Experiences</span>
+                </a>
+
+                <a asp-area="Admin" asp-controller="Messages" asp-action="Index" 
+                   class="admin-nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Messages" ? "active" : "")">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>Inquiries</span>
+                </a>
+
+                <a asp-area="Admin" asp-controller="Subscribers" asp-action="Index" 
+                   class="admin-nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Subscribers" ? "active" : "")">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    <span>Subscribers</span>
+                </a>
+
+                <a asp-area="Admin" asp-controller="Users" asp-action="Index" 
+                   class="admin-nav-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Users" ? "active" : "")">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>User Directory</span>
+                </a>
+
+                <div class="mt-auto pt-4 border-top border-secondary border-opacity-15">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="admin-nav-item text-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <span>Public Website</span>
+                    </a>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="admin-nav-item text-danger border-0 bg-transparent w-100 text-start">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            <span>Sign Out</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Canvas -->
+        <main class="admin-content-area">
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success d-flex align-items-center gap-2 mb-4" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #34d399; border-radius: 12px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>@TempData["Success"]</span>
+                </div>
+            }
+
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

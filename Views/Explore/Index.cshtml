@@ -1,0 +1,111 @@
+@model Nexora.ViewModels.ExploreViewModel
+@{
+    ViewData["Title"] = "Explore Signature Experiences";
+}
+
+<section class="py-5 my-4">
+    <div class="container-xl px-4">
+        <!-- Header -->
+        <div class="max-w-800 mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot cyan"></span>
+                Curated Architecture
+            </span>
+            <h1 class="display-hero mb-3">
+                Explore <span class="text-gradient-purple">Experiences.</span>
+            </h1>
+            <p class="lead-text mb-0">
+                Immerse yourself in our portfolio of spatial computing systems, luxury WebGL configurators, and enterprise platforms.
+            </p>
+        </div>
+
+        <!-- Filter Tabs & Search Controls -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-5 p-3 rounded-4 glass-card reveal-init">
+            <!-- Category Pills -->
+            <div class="d-flex flex-wrap gap-2">
+                <a asp-action="Index" asp-route-category="All" 
+                   data-explore-filter="All"
+                   class="badge-futuristic py-2 px-3 @(Model.ActiveCategory == "All" || string.IsNullOrEmpty(Model.ActiveCategory) ? "active border-primary text-white" : "")"
+                   style="cursor: pointer; text-decoration: none;">
+                    All Artifacts
+                </a>
+                @foreach (var cat in Model.Categories)
+                {
+                    <a asp-action="Index" asp-route-category="@cat" 
+                       data-explore-filter="@cat"
+                       class="badge-futuristic py-2 px-3 @(Model.ActiveCategory == cat ? "active border-primary text-white" : "")"
+                       style="cursor: pointer; text-decoration: none;">
+                        @cat
+                    </a>
+                }
+            </div>
+
+            <!-- Search Field -->
+            <form asp-action="Index" method="get" class="d-flex align-items-center gap-2">
+                <input type="hidden" name="category" value="@Model.ActiveCategory" />
+                <div class="position-relative">
+                    <input type="text" name="q" value="@Model.SearchQuery" 
+                           placeholder="Filter by keyword..." 
+                           class="form-control-nexora py-2 ps-4" 
+                           style="border-radius: var(--radius-pill); font-size: 0.85rem; width: 220px;" />
+                </div>
+                <button type="submit" class="btn-nexora-primary py-2 px-3" style="font-size: 0.85rem;">
+                    Filter
+                </button>
+            </form>
+        </div>
+
+        <!-- Experiences Grid -->
+        <div class="row g-4" id="experience-grid">
+            @if (!Model.Experiences.Any())
+            {
+                <div class="col-12 text-center py-5">
+                    <div class="glass-card p-5 max-w-500 mx-auto">
+                        <div class="badge-dot mb-3 mx-auto"></div>
+                        <h4 class="text-white mb-2">No Matching Artifacts</h4>
+                        <p class="text-secondary small mb-4">No experiences currently match your selected filters.</p>
+                        <a asp-action="Index" class="btn-nexora-secondary">Reset Filters</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                @foreach (var exp in Model.Experiences)
+                {
+                    <div class="col-lg-4 col-md-6 reveal-init" data-experience-category="@exp.Category">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: @exp.AccentColor; box-shadow: 0 0 8px @exp.AccentColor;"></span>
+                                    @exp.Category
+                                </span>
+                                <img src="@exp.ImageUrl" alt="@exp.Title" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+
+                            <div class="showcase-content">
+                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                    <span class="font-mono text-muted small">@exp.Client • @exp.Year</span>
+                                    <span class="font-mono small text-gradient-cyan fw-bold">@exp.MetricResult</span>
+                                </div>
+
+                                <h3 class="display-card mb-2 text-white">@exp.Title</h3>
+                                <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                                    @exp.Subtitle
+                                </p>
+
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-muted small">@exp.TechStack?.Split(',').FirstOrDefault()</span>
+                                    <a asp-action="Details" asp-route-id="@exp.Id" class="btn-nexora-ghost">
+                                        <span>Case Study</span>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

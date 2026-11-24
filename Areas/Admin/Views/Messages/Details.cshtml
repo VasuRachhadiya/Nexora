@@ -1,0 +1,59 @@
+@model Nexora.Models.ContactMessage
+@{
+    ViewData["Title"] = $"Inquiry from {Model.Name}";
+}
+
+<div class="mb-4">
+    <a asp-action="Index" class="text-secondary text-decoration-none d-inline-flex align-items-center gap-2 small">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Back to Dispatches</span>
+    </a>
+</div>
+
+<div class="glass-card p-4 p-md-5 max-w-800">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4 pb-4 border-bottom border-secondary border-opacity-15">
+        <div>
+            <span class="badge-futuristic mb-2">@Model.Category</span>
+            <h2 class="text-white mb-1" style="font-size: 1.6rem;">@(Model.Subject ?? "Project Inquiry")</h2>
+            <div class="font-mono text-muted small">Transmitted on @Model.CreatedAt.ToString("MMMM dd, yyyy @ HH:mm:ss UTC")</div>
+        </div>
+        <div class="d-flex gap-2">
+            <a href="mailto:@Model.Email?subject=Re: @(Uri.EscapeDataString(Model.Subject ?? "NEXORA Inquiry"))" class="btn-nexora-primary py-2 px-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <span>Reply by Email</span>
+            </a>
+            <form asp-action="Delete" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Delete this inquiry?');">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn-nexora-icon" style="color: #f43f5e;" title="Delete message">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sender Details -->
+    <div class="row g-3 mb-4 p-3 rounded-3" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle);">
+        <div class="col-md-6">
+            <div class="font-mono text-muted small text-uppercase">Sender Identity</div>
+            <div class="text-white fw-bold mt-1">@Model.Name</div>
+        </div>
+        <div class="col-md-6">
+            <div class="font-mono text-muted small text-uppercase">Email Coordinate</div>
+            <div class="text-gradient-cyan fw-bold mt-1">@Model.Email</div>
+        </div>
+    </div>
+
+    <!-- Message Content Body -->
+    <div class="mb-4">
+        <div class="font-mono text-muted small text-uppercase mb-2">Transmission Content</div>
+        <div class="p-4 rounded-3 text-secondary" style="background: rgba(10, 13, 22, 0.7); border: 1px solid var(--border-subtle); line-height: 1.8; font-size: 1.05rem; white-space: pre-wrap;">@Model.Message</div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.AdminNotes))
+    {
+        <div class="p-3 rounded-3" style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.3);">
+            <div class="font-mono text-gradient-purple small fw-bold mb-1">Internal Note</div>
+            <div class="text-secondary small">@Model.AdminNotes</div>
+        </div>
+    }
+</div>

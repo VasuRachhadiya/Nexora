@@ -1,0 +1,524 @@
+@model Nexora.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Ideas Deserve Extraordinary Experiences";
+}
+
+<!-- =================================================================
+     1. HERO SECTION
+     ================================================================= -->
+<section class="hero-section position-relative pt-5 pb-5 overflow-hidden" style="min-height: 92vh; display: flex; align-items: center;">
+    <div class="container-xl px-4 position-relative" style="z-index: 2;">
+        <div class="row align-items-center g-5">
+            <!-- Left Hero Text Content -->
+            <div class="col-lg-7 col-md-12 reveal-init">
+                <div class="mb-4">
+                    <span class="badge-futuristic">
+                        <span class="badge-dot"></span>
+                        Spatial Design &amp; Digital Engineering Studio
+                    </span>
+                </div>
+
+                <h1 class="display-hero mb-4">
+                    Ideas Deserve<br />
+                    <span class="text-gradient-purple">Extraordinary</span><br />
+                    <span class="text-gradient-white">Experiences.</span>
+                </h1>
+
+                <p class="lead-text mb-5" style="max-width: 580px;">
+                    NEXORA architects next-generation spatial computing interfaces, cinematic digital environments, and ultra-high-performance Web ecosystems that redefine industry benchmarks.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 align-items-center mb-5">
+                    <a href="#showcase" class="btn-nexora-primary">
+                        <span>Explore Experience</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a asp-controller="Home" asp-action="About" class="btn-nexora-secondary">
+                        <span>Discover More</span>
+                    </a>
+                </div>
+
+                <!-- Floating Micro Metrics -->
+                <div class="d-flex flex-wrap align-items-center gap-4 pt-3 border-top border-secondary border-opacity-15">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge-dot cyan"></span>
+                        <span class="small font-mono text-secondary">Awwwards Studio Nominee</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge-dot emerald"></span>
+                        <span class="small font-mono text-secondary">Zero Generic Templates</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge-dot"></span>
+                        <span class="small font-mono text-secondary">Spatial WebGL Engine 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Hero Visual 3D Showcase -->
+            <div class="col-lg-5 col-md-12 reveal-init">
+                <div class="position-relative" style="perspective: 1200px;">
+                    <!-- Main Floating Glass Card -->
+                    <div class="glass-card p-4" data-tilt style="transform-style: preserve-3d; background: linear-gradient(135deg, rgba(24, 30, 50, 0.8) 0%, rgba(10, 13, 22, 0.85) 100%); border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px -10px var(--primary-glow);">
+                        <!-- Card Top Bar -->
+                        <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom border-secondary border-opacity-25">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge-dot cyan"></span>
+                                <span class="badge-futuristic py-1 px-2" style="font-size: 0.72rem;">NEXORA NEURAL OS v4.2</span>
+                            </div>
+                            <span class="font-mono text-muted small">60 FPS • WebXR</span>
+                        </div>
+
+                        <!-- Card Visual Banner -->
+                        <div class="position-relative rounded-3 overflow-hidden mb-3" style="aspect-ratio: 16/10;">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Aura Spatial Interface" class="w-100 h-100 object-fit-cover" />
+                            <div class="position-absolute bottom-0 start-0 p-3 w-100" style="background: linear-gradient(180deg, transparent, rgba(5,6,10,0.95));">
+                                <div class="badge-futuristic py-1 px-2 mb-1" style="font-size: 0.7rem; border-color: var(--border-glow);">Spatial Architecture</div>
+                                <h5 class="text-white mb-0" style="font-size: 1.15rem;">Aura Neural Spatial Engine</h5>
+                            </div>
+                        </div>
+
+                        <!-- Live Telemetry Rows -->
+                        <div class="row g-2 text-center pt-2">
+                            <div class="col-4">
+                                <div class="p-2 rounded" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                                    <div class="font-mono text-gradient-purple fw-bold">0.4ms</div>
+                                    <div class="text-muted" style="font-size: 0.68rem; text-transform: uppercase;">Compute</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                                    <div class="font-mono text-gradient-cyan fw-bold">120 FPS</div>
+                                    <div class="text-muted" style="font-size: 0.68rem; text-transform: uppercase;">Render</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                                    <div class="font-mono text-white fw-bold">100/100</div>
+                                    <div class="text-muted" style="font-size: 0.68rem; text-transform: uppercase;">Lighthouse</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Floating Elements -->
+                    <div class="position-absolute glass-card py-2 px-3 d-flex align-items-center gap-2" 
+                         style="top: -20px; right: -25px; z-index: 3; background: rgba(14, 18, 30, 0.9); border-color: rgba(6, 182, 212, 0.4); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <span class="font-mono small text-white fw-semibold">Spatial Design Award</span>
+                    </div>
+
+                    <div class="position-absolute glass-card py-2 px-3 d-flex align-items-center gap-2" 
+                         style="bottom: -25px; left: -25px; z-index: 3; background: rgba(14, 18, 30, 0.9); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);">
+                        <span class="badge-dot emerald"></span>
+                        <span class="font-mono small text-white">Live Realtime Sync</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator Down -->
+        <div class="text-center pt-5 mt-4">
+            <a href="#showcase" class="text-muted text-decoration-none d-inline-flex flex-column align-items-center gap-2" style="font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                <span>Scroll to Explore</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="animate-bounce" style="animation: bounceIndicator 2s infinite;">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+@@keyframes bounceIndicator {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(8px); }
+    60% { transform: translateY(4px); }
+}
+</style>
+
+<!-- =================================================================
+     2. INTERACTIVE SHOWCASE
+     ================================================================= -->
+<section id="showcase" class="py-5 my-5">
+    <div class="container-xl px-4">
+        <!-- Section Header -->
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-4 mb-5 reveal-init">
+            <div>
+                <span class="badge-futuristic mb-3">
+                    <span class="badge-dot cyan"></span>
+                    Portfolio Excellence
+                </span>
+                <h2 class="display-section">
+                    Signature Digital <span class="text-gradient-purple">Artifacts.</span>
+                </h2>
+                <p class="lead-text mb-0" style="max-width: 580px;">
+                    Hand-crafted spatial computing interfaces, WebGL customization engines, and category-defining enterprise platforms.
+                </p>
+            </div>
+            <div>
+                <a asp-controller="Explore" asp-action="Index" class="btn-nexora-secondary">
+                    <span>View All Experiences (@Model.FeaturedExperiences.Count+)</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Showcase Cards Grid -->
+        <div class="row g-4">
+            @foreach (var item in Model.FeaturedExperiences)
+            {
+                <div class="col-lg-4 col-md-6 reveal-init">
+                    <div class="showcase-card" data-tilt>
+                        <div class="showcase-media">
+                            <span class="showcase-badge-floating badge-futuristic">
+                                <span class="badge-dot" style="background-color: @item.AccentColor; box-shadow: 0 0 8px @item.AccentColor;"></span>
+                                @item.Category
+                            </span>
+                            <img src="@item.ImageUrl" alt="@item.Title" loading="lazy" />
+                            <div class="showcase-overlay"></div>
+                        </div>
+
+                        <div class="showcase-content">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <span class="font-mono text-muted small">@item.Client • @item.Year</span>
+                                <span class="font-mono small text-gradient-cyan fw-bold">@item.MetricResult</span>
+                            </div>
+
+                            <h3 class="display-card mb-2 text-white">@item.Title</h3>
+                            <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.6;">
+                                @item.Subtitle
+                            </p>
+
+                            <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                <span class="font-mono text-muted" style="font-size: 0.75rem;">@item.TechStack?.Split(',').FirstOrDefault()</span>
+                                <a asp-controller="Explore" asp-action="Details" asp-route-id="@item.Id" class="btn-nexora-ghost">
+                                    <span>Case Study</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- =================================================================
+     3. FEATURES SECTION (4 PREMIUM CARDS)
+     ================================================================= -->
+<section class="py-5 my-5 position-relative">
+    <div class="container-xl px-4">
+        <!-- Section Header -->
+        <div class="text-center max-w-700 mx-auto mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot"></span>
+                The NEXORA Standard
+            </span>
+            <h2 class="display-section mb-3">
+                Engineered for <span class="text-gradient-cyan">Maximum Impact.</span>
+            </h2>
+            <p class="lead-text mx-auto" style="max-width: 620px;">
+                We refuse to deliver off-the-shelf templates. Every engagement embodies four foundational pillars of modern digital mastery.
+            </p>
+        </div>
+
+        <!-- 4 Feature Cards Grid -->
+        <div class="row g-4">
+            <!-- Feature 1: Innovative Design -->
+            <div class="col-lg-3 col-md-6 reveal-init">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-white mb-3" style="font-size: 1.3rem;">Innovative Design</h4>
+                    <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                        Editorial typography, bespoke glass surfaces, and tactile micro-interactions that captivate viewers within 50 milliseconds of landing.
+                    </p>
+                    <div class="d-flex align-items-center gap-2 pt-2 border-top border-secondary border-opacity-15 font-mono text-muted small">
+                        <span>Pillar 01</span> • <span class="text-gradient-purple">Aesthetic Mastery</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Intelligent Experience -->
+            <div class="col-lg-3 col-md-6 reveal-init">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon-wrapper" style="border-color: rgba(6, 182, 212, 0.3); background: rgba(6, 182, 212, 0.1);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2">
+                            <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-3 3.87V15a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-4.13A4 4 0 0 0 16 7V6a4 4 0 0 0-4-4z"></path>
+                            <circle cx="9" cy="12" r="1"></circle>
+                            <circle cx="15" cy="12" r="1"></circle>
+                        </svg>
+                    </div>
+                    <h4 class="text-white mb-3" style="font-size: 1.3rem;">Intelligent Experience</h4>
+                    <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                        Predictive AI workflows, context-aware user journeys, and cognitive spatial layers that adapt organically to user behavior.
+                    </p>
+                    <div class="d-flex align-items-center gap-2 pt-2 border-top border-secondary border-opacity-15 font-mono text-muted small">
+                        <span>Pillar 02</span> • <span class="text-gradient-cyan">Cognitive AI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Seamless Performance -->
+            <div class="col-lg-3 col-md-6 reveal-init">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon-wrapper" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h4 class="text-white mb-3" style="font-size: 1.3rem;">Seamless Performance</h4>
+                    <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                        Sub-second Time-to-Interactive, hardware-accelerated CSS and canvas animations, edge caching, and zero render blocking.
+                    </p>
+                    <div class="d-flex align-items-center gap-2 pt-2 border-top border-secondary border-opacity-15 font-mono text-muted small">
+                        <span>Pillar 03</span> • <span class="text-white">120 FPS Fluidity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4: Future-Ready Technology -->
+            <div class="col-lg-3 col-md-6 reveal-init">
+                <div class="feature-card" data-tilt>
+                    <div class="feature-icon-wrapper" style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                            <rect x="9" y="9" width="6" height="6"></rect>
+                            <line x1="9" y1="1" x2="9" y2="4"></line>
+                            <line x1="15" y1="1" x2="15" y2="4"></line>
+                            <line x1="9" y1="20" x2="9" y2="23"></line>
+                            <line x1="15" y1="20" x2="15" y2="23"></line>
+                            <line x1="20" y1="9" x2="23" y2="9"></line>
+                            <line x1="20" y1="14" x2="23" y2="14"></line>
+                            <line x1="1" y1="9" x2="4" y2="9"></line>
+                            <line x1="1" y1="14" x2="4" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h4 class="text-white mb-3" style="font-size: 1.3rem;">Future-Ready Tech</h4>
+                    <p class="text-secondary small mb-4 flex-grow-1" style="line-height: 1.65;">
+                        Robust ASP.NET Core &amp; EF Core backend, clean hexagonal architecture, cryptographic authorization, and scale ready for 2030.
+                    </p>
+                    <div class="d-flex align-items-center gap-2 pt-2 border-top border-secondary border-opacity-15 font-mono text-muted small">
+                        <span>Pillar 04</span> • <span class="text-gradient-amber">Enterprise Scale</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================================
+     4. STATISTICS SECTION (ANIMATED COUNTERS)
+     ================================================================= -->
+<section class="py-5 my-5">
+    <div class="container-xl px-4">
+        <div class="glass-card p-4 p-md-5" style="background: linear-gradient(135deg, rgba(16, 20, 34, 0.8) 0%, rgba(8, 11, 20, 0.85) 100%);">
+            <div class="row g-4 text-center align-items-center">
+                @foreach (var stat in Model.Statistics)
+                {
+                    <div class="col-lg-3 col-6 reveal-init">
+                        <div class="stat-item-box">
+                            <div class="stat-number counter-val" 
+                                 data-target="@stat.TargetNumber" 
+                                 data-suffix="@stat.Suffix" 
+                                 data-prefix="@stat.Prefix">
+                                @stat.Value
+                            </div>
+                            <h5 class="text-white mb-2" style="font-size: 1.1rem;">@stat.Label</h5>
+                            <p class="text-secondary small mb-0" style="line-height: 1.4;">
+                                @stat.Description
+                            </p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================================
+     5. ABOUT SECTION (ELEGANT SPLIT LAYOUT)
+     ================================================================= -->
+<section class="py-5 my-5">
+    <div class="container-xl px-4">
+        <div class="split-grid">
+            <!-- Left Editorial Text -->
+            <div class="reveal-init">
+                <span class="badge-futuristic mb-3">
+                    <span class="badge-dot emerald"></span>
+                    The Manifesto
+                </span>
+                <h2 class="display-section mb-4">
+                    We Believe Design Is The <span class="text-gradient-white">Architecture Of Intent.</span>
+                </h2>
+                <p class="lead-text mb-4">
+                    In a digital landscape flooded with homogenized templates and soulless interfaces, NEXORA stands as an antidote.
+                </p>
+                <p class="text-secondary mb-4" style="line-height: 1.7;">
+                    Founded by visionary digital architects and systems engineers, we synthesize high-fashion art direction, cutting-edge spatial WebGL shaders, and enterprise C# reliability into singular digital touchpoints that command attention and drive exponential value.
+                </p>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                            <div class="font-mono text-gradient-purple fw-bold mb-1">Human-Centered</div>
+                            <div class="text-secondary small">Cognitive clarity in every interaction</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle);">
+                            <div class="font-mono text-gradient-cyan fw-bold mb-1">C# Engine</div>
+                            <div class="text-secondary small">Rock-solid backend resilience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <a asp-controller="Home" asp-action="About" class="btn-nexora-primary">
+                    <span>Our Full Story &amp; Leadership</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+
+            <!-- Right Visual Composition -->
+            <div class="reveal-init">
+                <div class="position-relative">
+                    <div class="rounded-4 overflow-hidden border border-secondary border-opacity-25" style="aspect-ratio: 4/3; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.8);">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80" 
+                             alt="NEXORA Studio Matrix" class="w-100 h-100 object-fit-cover" />
+                        <div class="position-absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(6,7,11,0.95) 100%);"></div>
+                    </div>
+
+                    <!-- Overlay Badge -->
+                    <div class="position-absolute glass-card p-4" style="bottom: -20px; right: 20px; max-width: 320px; background: rgba(14, 18, 30, 0.92); border-color: rgba(255,255,255,0.18);">
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge-dot cyan"></span>
+                            <span class="font-mono text-white small fw-bold">GLOBAL STUDIO FOOTPRINT</span>
+                        </div>
+                        <p class="text-secondary small mb-0">
+                            Operating from creative engineering hubs in Tokyo, San Francisco, and London.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================================
+     6. TESTIMONIALS CAROUSEL
+     ================================================================= -->
+<section class="py-5 my-5">
+    <div class="container-xl px-4">
+        <div class="text-center max-w-700 mx-auto mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot"></span>
+                Executive Endorsements
+            </span>
+            <h2 class="display-section mb-3">
+                Trusted by <span class="text-gradient-purple">Visionaries.</span>
+            </h2>
+            <p class="lead-text mx-auto" style="max-width: 600px;">
+                How category leaders transformed their market impact collaborating with NEXORA.
+            </p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="testimonial-carousel-wrap position-relative mx-auto" style="max-width: 860px;">
+            @for (int i = 0; i < Model.Testimonials.Count; i++)
+            {
+                var t = Model.Testimonials[i];
+                <div class="testimonial-slide @(i == 0 ? "active" : "")" style="@(i == 0 ? "display:block;" : "display:none;")">
+                    <div class="testimonial-card">
+                        <!-- Big quote symbol -->
+                        <div class="quote-mark-icon">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        </div>
+
+                        <!-- 5 Stars -->
+                        <div class="d-flex gap-1 mb-4 text-warning">
+                            @for (int s = 0; s < t.Rating; s++)
+                            {
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            }
+                        </div>
+
+                        <p class="text-white lead mb-4" style="font-size: 1.35rem; line-height: 1.6; font-weight: 400;">
+                            &ldquo;@t.Quote&rdquo;
+                        </p>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="@t.AvatarUrl" alt="@t.AuthorName" class="testimonial-avatar" />
+                            <div>
+                                <h5 class="text-white mb-0" style="font-size: 1.1rem;">@t.AuthorName</h5>
+                                <div class="text-secondary small font-mono">@t.AuthorRole • <strong class="text-white">@t.Company</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- Carousel Controls -->
+            <div class="d-flex align-items-center justify-content-between mt-4 px-2">
+                <div class="d-flex gap-2">
+                    @for (int d = 0; d < Model.Testimonials.Count; d++)
+                    {
+                        <button type="button" class="carousel-dot @(d == 0 ? "active" : "")" aria-label="Go to slide @(d+1)" 
+                                style="width: @(d == 0 ? "32px" : "10px"); height: 8px; border-radius: 4px; border: none; background: @(d == 0 ? "var(--primary)" : "rgba(255,255,255,0.2)"); transition: var(--transition-fast); cursor: pointer;"></button>
+                    }
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="button" class="carousel-prev btn-nexora-icon" aria-label="Previous testimonial">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button type="button" class="carousel-next btn-nexora-icon" aria-label="Next testimonial">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =================================================================
+     7. VISUALLY POWERFUL CTA SECTION
+     ================================================================= -->
+<section class="py-5 my-5 position-relative">
+    <div class="container-xl px-4">
+        <div class="glass-card p-5 text-center position-relative overflow-hidden reveal-init" 
+             style="background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.25) 0%, rgba(10, 13, 22, 0.95) 75%); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 30px 70px -15px rgba(0,0,0,0.8), 0 0 50px -10px var(--primary-glow);">
+            
+            <div class="position-relative" style="z-index: 2;">
+                <span class="badge-futuristic mb-4">
+                    <span class="badge-dot"></span>
+                    Initiate Collaboration
+                </span>
+
+                <h2 class="display-section mb-4" style="max-width: 780px; margin-inline: auto;">
+                    Your Next Great Experience <span class="text-gradient-purple">Starts Here.</span>
+                </h2>
+
+                <p class="lead-text mb-5 mx-auto" style="max-width: 620px;">
+                    Whether you are developing a spatial computing platform, transforming an enterprise workflow, or launching a breakthrough digital product, we are ready to build the extraordinary with you.
+                </p>
+
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a asp-controller="Home" asp-action="Contact" class="btn-nexora-primary py-3 px-5" style="font-size: 1.05rem;">
+                        <span>Let's Get Started</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a asp-controller="Services" asp-action="Index" class="btn-nexora-secondary py-3 px-4">
+                        <span>Explore Capabilities</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

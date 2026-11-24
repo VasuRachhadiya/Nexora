@@ -1,0 +1,64 @@
+@model List<Nexora.Models.NewsletterSubscriber>
+@{
+    ViewData["Title"] = "Insider Dispatch Subscribers";
+}
+
+<div class="mb-5 d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div>
+        <h1 class="display-section mb-1">Insider <span class="text-gradient-cyan">Subscribers.</span></h1>
+        <p class="text-secondary small mb-0">Verified recipients of confidential spatial drops and engineering updates.</p>
+    </div>
+    <div class="font-mono text-muted small">
+        Total Audience: <strong class="text-white">@Model.Count Active</strong>
+    </div>
+</div>
+
+<div class="glass-card p-4">
+    @if (!Model.Any())
+    {
+        <div class="text-center py-5">
+            <div class="badge-dot emerald mb-3 mx-auto"></div>
+            <h5 class="text-white mb-2">No Subscribers Yet</h5>
+            <p class="text-secondary small">New newsletter submissions will populate automatically.</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Subscriber Email</th>
+                        <th>Subscribed Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sub in Model)
+                    {
+                        <tr>
+                            <td>
+                                <span class="badge-dot emerald" title="Active"></span>
+                            </td>
+                            <td>
+                                <div class="fw-bold text-white font-mono">@sub.Email</div>
+                            </td>
+                            <td class="font-mono text-muted small">
+                                @sub.SubscribedAt.ToString("MMM dd, yyyy HH:mm")
+                            </td>
+                            <td>
+                                <form asp-action="Delete" asp-route-id="@sub.Id" method="post" onsubmit="return confirm('Remove @sub.Email from dispatch?');">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn-nexora-icon" style="width: 32px; height: 32px; color: #f43f5e;" title="Remove subscriber">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

@@ -1,0 +1,193 @@
+@model Nexora.ViewModels.ContactViewModel
+@{
+    ViewData["Title"] = "Contact Studio — Start an Extraordinary Project";
+}
+
+<section class="py-5 my-4 position-relative">
+    <div class="container-xl px-4">
+        <!-- Header -->
+        <div class="text-center max-w-700 mx-auto mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot cyan"></span>
+                Direct Transmission
+            </span>
+            <h1 class="display-hero mb-3">
+                Let's Build The <br />
+                <span class="text-gradient-purple">Extraordinary.</span>
+            </h1>
+            <p class="lead-text mx-auto" style="max-width: 620px;">
+                Whether you have an ambitious spatial product, a brand transformation, or an enterprise challenge, our directors are ready.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-start">
+            <!-- Left Contact Form Column -->
+            <div class="col-lg-7 reveal-init">
+                <div class="glass-card p-4 p-md-5">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="p-4 rounded-4 mb-4" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="badge-dot emerald"></div>
+                                <div>
+                                    <h5 class="text-white mb-1" style="font-size: 1.15rem;">Dispatch Received</h5>
+                                    <p class="text-secondary small mb-0">@TempData["SuccessMessage"]</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <h3 class="text-white mb-2" style="font-size: 1.5rem;">Project Inquiry</h3>
+                    <p class="text-secondary small mb-4">Please provide details about your timeframe, vision, and scope.</p>
+
+                    <form asp-controller="Home" asp-action="Contact" method="post">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
+
+                        <!-- Name & Email Row -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label asp-for="Name" class="form-label-nexora"></label>
+                                <input asp-for="Name" class="form-control-nexora" placeholder="Alexander Vance" />
+                                <span asp-validation-for="Name" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Email" class="form-label-nexora"></label>
+                                <input asp-for="Email" type="email" class="form-control-nexora" placeholder="alex@enterprise.com" />
+                                <span asp-validation-for="Email" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <!-- Category Selector -->
+                        <div class="mb-3">
+                            <label asp-for="Category" class="form-label-nexora"></label>
+                            <select asp-for="Category" class="form-control-nexora">
+                                <option value="Project Inquiry">Project Inquiry (Digital Platform / WebGL)</option>
+                                <option value="Spatial Computing">Spatial Computing &amp; WebXR OS</option>
+                                <option value="Brand Architecture">Brand Architecture &amp; Identity</option>
+                                <option value="Enterprise Architecture">Enterprise .NET &amp; Cloud Architecture</option>
+                                <option value="Partnership">Strategic Partnership / Press</option>
+                            </select>
+                        </div>
+
+                        <!-- Subject -->
+                        <div class="mb-3">
+                            <label asp-for="Subject" class="form-label-nexora"></label>
+                            <input asp-for="Subject" class="form-control-nexora" placeholder="e.g. Next-Gen Financial Portal Redesign" />
+                            <span asp-validation-for="Subject" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-4">
+                            <label asp-for="Message" class="form-label-nexora"></label>
+                            <textarea asp-for="Message" rows="5" class="form-control-nexora" placeholder="Describe the objectives, current bottlenecks, target audience, and preferred launch timeline..."></textarea>
+                            <span asp-validation-for="Message" class="text-danger small"></span>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-nexora-primary w-100 py-3" style="font-size: 1.05rem;">
+                            <span>Transmit Project Inquiry</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Studio Presence & FAQ Column -->
+            <div class="col-lg-5 reveal-init">
+                <!-- Studio Coordinates -->
+                <div class="glass-card p-4 mb-4">
+                    <span class="badge-futuristic mb-3">
+                        <span class="badge-dot emerald"></span>
+                        Studio Coordinates
+                    </span>
+
+                    <div class="d-flex flex-column gap-4 mt-3">
+                        <div class="d-flex gap-3">
+                            <div class="feature-icon-wrapper mb-0" style="width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-1" style="font-size: 1.1rem;">San Francisco HQ</h5>
+                                <div class="text-secondary small">555 Mission St, Financial District, CA 94105</div>
+                                <div class="font-mono text-muted small mt-1">sf@nexora.studio</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3">
+                            <div class="feature-icon-wrapper mb-0" style="width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; border-color: rgba(6,182,212,0.3); background: rgba(6,182,212,0.1); color:#22d3ee;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-1" style="font-size: 1.1rem;">Tokyo Atelier</h5>
+                                <div class="text-secondary small">Roppongi Hills Mori Tower 34F, Minato City, Tokyo</div>
+                                <div class="font-mono text-muted small mt-1">tokyo@nexora.studio</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3">
+                            <div class="feature-icon-wrapper mb-0" style="width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1); color:#fbbf24;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-1" style="font-size: 1.1rem;">London Studio</h5>
+                                <div class="text-secondary small">100 Bishopsgate, City of London, EC2N 4AG</div>
+                                <div class="font-mono text-muted small mt-1">london@nexora.studio</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Studio FAQ Accordion -->
+                <div class="glass-card p-4">
+                    <h4 class="text-white mb-3" style="font-size: 1.25rem;">Frequently Addressed</h4>
+                    
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        <div class="accordion-item bg-transparent border-0 mb-3">
+                            <h2 class="accordion-header" id="faqHeadingOne">
+                                <button class="accordion-button collapsed px-0 bg-transparent text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne">
+                                    What is the typical engagement timeframe?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body px-0 text-secondary small" style="line-height: 1.6;">
+                                    Brand and digital product sprints range from 6 to 14 weeks depending on the degree of spatial WebGL complexity, 3D assets, and backend integrations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item bg-transparent border-0 mb-3">
+                            <h2 class="accordion-header" id="faqHeadingTwo">
+                                <button class="accordion-button collapsed px-0 bg-transparent text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo">
+                                    Do you work with startups or only enterprise?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body px-0 text-secondary small" style="line-height: 1.6;">
+                                    We partner with high-conviction seed/Series A startups with revolutionary products, as well as Fortune 100 leaders seeking complete brand modernization.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item bg-transparent border-0">
+                            <h2 class="accordion-header" id="faqHeadingThree">
+                                <button class="accordion-button collapsed px-0 bg-transparent text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree">
+                                    How is IP and code handoff managed?
+                                </button>
+                            </h2>
+                            <div id="faqCollapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body px-0 text-secondary small" style="line-height: 1.6;">
+                                    Full 100% intellectual property rights, clean GitHub repositories, Figma source design systems, and automated CI/CD pipelines are transferred to your engineering team.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

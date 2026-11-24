@@ -1,0 +1,57 @@
+@model List<Nexora.ViewModels.AdminUserViewModel>
+@{
+    ViewData["Title"] = "User & Member Directory";
+}
+
+<div class="mb-5 d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <div>
+        <h1 class="display-section mb-1">User <span class="text-gradient-purple">Directory.</span></h1>
+        <p class="text-secondary small mb-0">Authorized directors, studio engineers, and registered platform members.</p>
+    </div>
+</div>
+
+<div class="glass-card p-4">
+    <div class="table-responsive">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Assigned Roles</th>
+                    <th>Member Since</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="@(user.AvatarUrl ?? "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80")" 
+                                     alt="@user.FullName" class="rounded-circle border border-primary" style="width: 36px; height: 36px; object-fit: cover;" />
+                                <div>
+                                    <div class="fw-bold text-white">@user.FullName</div>
+                                    <div class="text-secondary small">@(user.Bio ?? "Platform Member")</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="font-mono text-muted small">
+                            @user.Email
+                        </td>
+                        <td>
+                            @foreach (var role in user.Roles)
+                            {
+                                <span class="badge-futuristic py-1 px-2 me-1" style="font-size: 0.72rem; @(role == "Admin" ? "border-color: #8b5cf6; color: #c084fc;" : "")">
+                                    @role
+                                </span>
+                            }
+                        </td>
+                        <td class="font-mono text-muted small">
+                            @user.CreatedAt.ToString("MMM dd, yyyy")
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

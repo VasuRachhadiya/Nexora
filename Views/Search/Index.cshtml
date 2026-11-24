@@ -1,0 +1,125 @@
+@model Nexora.ViewModels.SearchViewModel
+@{
+    ViewData["Title"] = $"Search: {Model.Query}";
+}
+
+<section class="py-5 my-4">
+    <div class="container-xl px-4">
+        <!-- Search Header -->
+        <div class="max-w-800 mb-5 reveal-init">
+            <span class="badge-futuristic mb-3">
+                <span class="badge-dot"></span>
+                Global Discovery
+            </span>
+            <h1 class="display-hero mb-3">
+                Search <span class="text-gradient-cyan">Ecosystem.</span>
+            </h1>
+            <p class="lead-text mb-0">
+                Explore signature experiences, spatial capabilities, and studio publications.
+            </p>
+        </div>
+
+        <!-- Search Input Bar & Category Filter -->
+        <div class="glass-card p-4 mb-5 reveal-init">
+            <form asp-controller="Search" asp-action="Index" method="get">
+                <div class="d-flex flex-wrap gap-3">
+                    <div class="flex-grow-1 position-relative">
+                        <input type="text" name="q" value="@Model.Query" 
+                               placeholder="Search by keywords (e.g. Spatial, WebGL, Fintech, C#, Architecture)..." 
+                               class="form-control-nexora py-3 ps-4" 
+                               style="font-size: 1.05rem;" />
+                    </div>
+                    <select name="type" class="form-control-nexora" style="width: auto; min-width: 160px;">
+                        <option value="All" selected="@(Model.FilterType == "All")">All Modules</option>
+                        <option value="Experiences" selected="@(Model.FilterType == "Experiences")">Experiences Only</option>
+                        <option value="Services" selected="@(Model.FilterType == "Services")">Services Only</option>
+                    </select>
+                    <button type="submit" class="btn-nexora-primary py-3 px-4">
+                        <span>Search</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Results Info -->
+        <div class="d-flex align-items-center justify-content-between mb-4 font-mono text-secondary small">
+            <div>
+                Found <strong class="text-white">@Model.TotalResults</strong> results for <span class="text-gradient-purple">"@Model.Query"</span>
+            </div>
+            <div>Module Filter: <strong class="text-white">@Model.FilterType</strong></div>
+        </div>
+
+        @if (Model.TotalResults == 0)
+        {
+            <div class="glass-card text-center p-5 max-w-600 mx-auto">
+                <div class="badge-dot mb-3 mx-auto"></div>
+                <h4 class="text-white mb-2">No Matching Records Located</h4>
+                <p class="text-secondary small mb-4">
+                    Try searching for broader keywords like "Design", "Spatial", "WebGL", "Fintech", or "Performance".
+                </p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a asp-action="Index" asp-route-q="Spatial" class="badge-futuristic py-2 px-3">Spatial</a>
+                    <a asp-action="Index" asp-route-q="Design" class="badge-futuristic py-2 px-3">Design</a>
+                    <a asp-action="Index" asp-route-q="Fintech" class="badge-futuristic py-2 px-3">Fintech</a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <!-- Results Grid -->
+            <div class="row g-4">
+                <!-- Experiences Results -->
+                @foreach (var exp in Model.Experiences)
+                {
+                    <div class="col-lg-4 col-md-6 reveal-init">
+                        <div class="showcase-card h-100" data-tilt>
+                            <div class="showcase-media">
+                                <span class="showcase-badge-floating badge-futuristic">
+                                    <span class="badge-dot" style="background-color: @exp.AccentColor;"></span>
+                                    @exp.Category
+                                </span>
+                                <img src="@exp.ImageUrl" alt="@exp.Title" loading="lazy" />
+                                <div class="showcase-overlay"></div>
+                            </div>
+                            <div class="showcase-content">
+                                <span class="font-mono text-muted small mb-2">Experience Artifact • @exp.Year</span>
+                                <h4 class="display-card text-white mb-2">@exp.Title</h4>
+                                <p class="text-secondary small mb-4 flex-grow-1">@exp.Subtitle</p>
+                                <div class="pt-3 border-top border-secondary border-opacity-15 d-flex align-items-center justify-content-between">
+                                    <span class="font-mono text-gradient-cyan small">@exp.MetricResult</span>
+                                    <a asp-controller="Explore" asp-action="Details" asp-route-id="@exp.Id" class="btn-nexora-ghost">
+                                        <span>Case Study</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Services Results -->
+                @foreach (var s in Model.Services)
+                {
+                    <div class="col-lg-4 col-md-6 reveal-init">
+                        <div class="feature-card h-100" data-tilt>
+                            <div class="feature-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <span class="font-mono text-muted small mb-2">Studio Service</span>
+                            <h4 class="display-card text-white mb-2">@s.Title</h4>
+                            <p class="font-mono text-gradient-cyan small mb-3">@s.Tagline</p>
+                            <p class="text-secondary small mb-4 flex-grow-1">@s.Description</p>
+                            <div class="pt-3 border-top border-secondary border-opacity-15">
+                                <a asp-controller="Services" asp-action="Index" class="btn-nexora-ghost">
+                                    <span>Learn More</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
